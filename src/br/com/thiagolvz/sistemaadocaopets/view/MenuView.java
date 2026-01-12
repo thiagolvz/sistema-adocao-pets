@@ -18,19 +18,21 @@ public class MenuView {
         Scanner sc = new Scanner(System.in);
         Integer opcao = -1;
         
-        while (opcao <= 0) {
+        while ((opcao <= 0) || (opcao > 6)) {
             System.out.print("Digite uma opção: ");
 
             try {
                 opcao = sc.nextInt();
 
-                if (opcao <= 0) {
+                if ((opcao <= 0) || (opcao > 6)) {
                     System.out.println("Opção inválida.");
+                    exibirMenu();
                 }
 
             } catch (java.util.InputMismatchException e) {
                 System.out.println("Digite apenas números.");
                 sc.nextLine();
+                exibirMenu();
             }
         }
 
