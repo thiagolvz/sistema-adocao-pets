@@ -1,19 +1,21 @@
 package br.com.thiagolvz.sistemaadocaopets.model.entities;
 
+import br.com.thiagolvz.sistemaadocaopets.model.entities.enums.Sexo;
+import br.com.thiagolvz.sistemaadocaopets.model.entities.enums.Tipo;
+
 public class Pet {
     private String nomeCompleto;
-    private String tipo;
-    private String sexo;
-    private String endereço;
-    private Integer idade;
+    private Tipo tipo;
+    private Sexo sexo;
+    private Endereco endereco;
+    private Double idade;
     private Double peso;
     private String raca;
 
-
-    public Pet(String nomeCompleto, String endereço, Integer idade, Double peso, String raca, String sexo, String tipo) {
-        this.nomeCompleto = nomeCompleto;
-        this.endereço = endereço;
+    public Pet(Endereco endereco, Double idade, String nomeCompleto, Double peso, String raca, Sexo sexo, Tipo tipo) {
+        this.endereco = endereco;
         this.idade = idade;
+        this.nomeCompleto = nomeCompleto;
         this.peso = peso;
         this.raca = raca;
         this.sexo = sexo;
@@ -31,19 +33,19 @@ public class Pet {
         this.raca = raca;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
-    public Integer getIdade() {
+    public Double getIdade() {
         return idade;
     }
 
-    public void setIdade(Integer idade) {
+    public void setIdade(Double idade) {
         this.idade = idade;
     }
 
@@ -63,19 +65,19 @@ public class Pet {
         this.peso = peso;
     }
 
-    public String getSexo() {
+    public Sexo getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
 
-    public String getTipo() {
+    public Tipo getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
 }

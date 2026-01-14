@@ -24,15 +24,33 @@ public class FormularioController {
             String line;
             while ((line = br.readLine()) != null) {
 
+                String resposta;
+
                 if (line.isBlank()) {
                     continue;
                 }
 
                 System.out.println(line);
-                System.out.print("> ");
-                String resposta = sc.nextLine();
-                respostas.add(resposta);
 
+                //pergunta específica: endereço possui 3 campos
+                if (line.toLowerCase().contains("endereço")) {
+
+                    System.out.print("Número da casa: ");
+                    resposta = sc.nextLine();
+                    respostas.add(resposta);
+
+                    System.out.print("Cidade: ");
+                    resposta = sc.nextLine();
+                    respostas.add(resposta);
+
+                    System.out.print("Rua: ");
+                    resposta = sc.nextLine();
+                    respostas.add(resposta);
+                } else {
+                    System.out.print("> ");
+                    resposta = sc.nextLine();
+                    respostas.add(resposta);
+                }
             }
         } catch (IOException e) {
             System.err.println("Erro ao ler o arquivo: " + e.getMessage());
