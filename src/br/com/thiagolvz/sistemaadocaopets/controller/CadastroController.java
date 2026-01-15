@@ -5,14 +5,11 @@ import br.com.thiagolvz.sistemaadocaopets.model.entities.Endereco;
 import br.com.thiagolvz.sistemaadocaopets.model.entities.Pet;
 import br.com.thiagolvz.sistemaadocaopets.model.entities.enums.Sexo;
 import br.com.thiagolvz.sistemaadocaopets.model.entities.enums.Tipo;
+import static br.com.thiagolvz.sistemaadocaopets.model.constants.ValoresPadrao.*;
 
 import java.util.List;
 
-import static br.com.thiagolvz.sistemaadocaopets.model.constants.ValoresPadrao.*;
-
-
 public class CadastroController {
-
 
     public Pet cadastro(List<String> respostas) {
 
