@@ -16,7 +16,7 @@ public class ArquivoController {
     public void salvarPet(Pet pet) {
         criarPastaSeNaoExistir();
 
-        String nomeArquivo = gerarNomeArquivo();
+        String nomeArquivo = gerarNomeArquivo(pet);
         File arquivo = new File(PASTA + File.separator + nomeArquivo);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivo))) {
@@ -65,7 +65,7 @@ public class ArquivoController {
                 .replace(" ", "")
                 .toUpperCase();
 
-        return dataHora + nomeSemEspacos + ".TXT";
+        return dataHora + nomeSemEspacos + ".txt";
     }
 
     private String dataAtual() {

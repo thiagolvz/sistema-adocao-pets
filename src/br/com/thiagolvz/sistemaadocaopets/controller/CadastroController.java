@@ -48,13 +48,16 @@ public class CadastroController {
         }
 
         // endereço
+        String rua = respostas.get(5);
         String numero = respostas.get(3);
         String cidade = respostas.get(4);
-        String rua = respostas.get(5);
 
         Endereco endereco = new Endereco();
+
         if (numero == null || numero.trim().isEmpty()) {
             endereco.setNumero(NAO_INFORMADO_TEXTO);
+        } else {
+            endereco.setNumero(numero);
         }
         endereco.setCidade(cidade);
         endereco.setRua(rua);
